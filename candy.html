@@ -1,0 +1,65 @@
+<html>
+    <link rel="stylesheet" href="https://44-563-web-apps-s23.github.io/44563-webapps-s23-assignment6-MaddelaTejaswi/"
+<head><title>Candy file</title></head>
+<body>
+  <h1>Tejaswi Maddela chooses candy</h1>
+    <div class="container">
+      <div class="form-group">
+    <form>
+        <input type="checkbox" id="chocolate" name="topping1"   
+          value="True">
+        <label for="c_cheese">Dark Chocolate</label>
+    </br>
+      
+        <input type="checkbox" id="nuts" name="topping2" 
+           value="True">
+        <label for="c_olive">Nuts</label>
+    </br>
+      
+        <input type="checkbox" id="chewy" name="topping3"   
+           value="False">
+        <label for="c_onion">Chewy</label>
+    </br>
+
+        <input type="button" class="btn btn-primary" onclick="selectBox()" value="Select a box">
+      </form>
+    </div>
+      <p id="resultval">This text will be replaced </p>
+
+      <div class="form-group">
+      <form>
+        <label for="for_age">Enter the size </label>
+        <input type ="text" id="size" value="size" name="for_nick" autofocus> 
+        <br>
+    
+        <label for="for_nick">Enter price </label>
+        <input type ="text" id="price" name="for_nick" autofocus> 
+        <br>
+    
+        <input type="button" class="btn btn-primary" onclick="updateBox()" value="Update the box">
+    </form>
+    </div>
+    <p id="resultvalnew">This text will be replaced </p>
+</div>
+      <script>
+       my_candy_box={};
+       function selectBox(){
+        my_candy_box ={};
+        my_candy_box.dark=document.getElementById("chocolate").checked;
+        my_candy_box.nuts=document.getElementById("nuts").checked;
+        my_candy_box.chewy=document.getElementById("chewy").checked;
+        document.getElementById("resultval").innerHTML=JSON.stringify(my_candy_box);
+        
+    }
+    function updateBox(){
+       
+        my_candy_box["size"]=document.getElementById("size").value;
+        my_candy_box["price"]=document.getElementById("price").value;
+        
+        document.getElementById("resultvalnew").innerHTML=JSON.stringify(my_candy_box);
+        
+    }
+
+      </script>
+</body>
+</html>
